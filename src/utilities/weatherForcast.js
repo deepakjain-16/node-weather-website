@@ -13,7 +13,7 @@ const request = require('request');
                 callback(body.error);
            else
            callback(null,
-           'Its '+body.daily.data[0].summary+'It is currently '+body.currently.temperature +' degree Fahrenheit out there.Wind speed is '+body.currently.windSpeed+'kph and average visibility is '+body.currently.visibility+'+km.There is '+ body.currently.precipProbability+'% chances of rain.'
+           'Its '+body.daily.data[0].summary+' It is currently '+body.currently.temperature +' degree Fahrenheit out there. Wind speed is '+body.currently.windSpeed+'kph and average visibility is '+body.currently.visibility+'+km. There is '+ body.currently.precipProbability+'% chances of rain.'
            );
                    
    });
