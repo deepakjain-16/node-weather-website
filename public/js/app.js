@@ -10,17 +10,17 @@ $('form').submit((e)=>{
         alert('Invalid!');
     else
     {
-        $('#forcast').text('Loading...');
-        $('#location').empty();
+        $('#location').text('Loading...');
+        $('#forcast').empty();
         //http://localhost:3000
         const url = '/weather?address='+$('form').children('input').val();
         callService(url,(error,data)=>{
             if(error){
-                $('#forcast').text(error);
+                $('#location').text(error);
             }
             else{
-                $('#forcast').text(data.forcast);
                 $('#location').text(data.location);
+                $('#forcast').text(data.forcast);
             }
         });
     }   
