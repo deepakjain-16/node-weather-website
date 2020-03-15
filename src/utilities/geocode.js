@@ -6,7 +6,7 @@ const geoCode = (address,callback) =>{
                 if(error)
                         callback('Service Unavailable!');
                 else if(body.features.length === 0)
-                        callback('unable to find location. try another search.');
+                        callback('unable to find location. Try another search.');
                 else
                         callback(null,{
                                longitude: body.features[0].center[1],
