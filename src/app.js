@@ -37,7 +37,7 @@ app.get('/about',(req,res) => {
 
 app.get('/help',(req,res) =>{
     res.render('help',{
-        message:'mail your query at:- deepakjain263.dcsa@gmail.com',
+        message:'Drop your query at:- deepakjain263.dcsa@gmail.com',
         title: 'Help',
         name: 'Deepak Jain'
     });
