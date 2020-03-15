@@ -12,7 +12,8 @@ $('form').submit((e)=>{
     {
         $('#forcast').text('Loading...');
         $('#location').empty();
-        const url = 'http://localhost:3000/weather?address='+$('form').children('input').val();
+        //http://localhost:3000
+        const url = '/weather?address='+$('form').children('input').val();
         callService(url,(error,data)=>{
             if(error){
                 $('#forcast').text(error);

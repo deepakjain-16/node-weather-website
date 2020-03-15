@@ -6,6 +6,9 @@ const app = express();
 
 const hbs = require('hbs'); //for partials
 
+
+const port = process.env.PORT || 3000;
+
 //next two for setting of handlebars
 app.set('view engine','hbs');
 app.set('views', path.join(__dirname, '../templates/views')); //telling express to check handlebars in views directory
@@ -72,6 +75,6 @@ app.get('*',(req,res) =>{
     });
 });
 
-app.listen(3000,() =>{
-console.log('server is running on port 3000');
+app.listen(port,() =>{
+console.log('server is running on port '+port);
 });
