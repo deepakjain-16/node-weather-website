@@ -1,4 +1,4 @@
-// console.log('client side js');
+ //console.log('client side js');
 // const weatherForm = document.querySelector('form');
 // weatherForm.addEventListener('submit',(e) =>{
 //     e.preventDefault();
