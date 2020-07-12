@@ -13,7 +13,7 @@ const request = require('postman-request');
                 callback(body.error);
            else
            callback(null,
-           'Its '+body.current.weather_descriptions[0]+ ' and '+body.current.temperature +' degree Fahrenheit out there. cloud cover is '+body.current.cloudcover+'% and average visibility is '+body.current.visibility+'+km.'
+           'Its '+body.current.weather_descriptions[0]+ ' and '+body.current.temperature +' degrees out there. cloud cover is '+body.current.cloudcover+'%, average visibility is '+body.current.visibility+'+ km and humidity is '+body.current.humidity+'%.'
            );
                    
    });
