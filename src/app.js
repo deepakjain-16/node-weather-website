@@ -1,24 +1,24 @@
 const geocode = require('./utilities/geocode');
 const weatherForcast = require('./utilities/weatherForcast');
 const path = require('path');
+const hbs = require('hbs'); //for partials
 const express = require('express'); //npm module for creating servers
 const app = express();
 
-const hbs = require('hbs'); //for partials
-
-
 const port = process.env.PORT || 3000;
 
-//next two for setting of handlebars
-app.set('view engine','hbs');
-app.set('views', path.join(__dirname, '../templates/views')); //telling express to check handlebars in views directory
+//telling express to check handlebars in views directory
+app.set('views', path.join(__dirname, '../templates/views')); 
 
+//next two for setting of handlebars engine
+app.set('view engine','hbs');
 //telling handlebars where my partials are
 hbs.registerPartials(path.join(__dirname,'../templates/partials'));
 
-//to use static content for our website
-app.use(express.static(path.join(__dirname,'../public')));  
 
+
+//to use static content for our website like css img(exposed folder)
+app.use(express.static(path.join(__dirname,'../public')));
 
 //express route handlers
 app.get('',(req,res) =>{
@@ -37,7 +37,7 @@ app.get('/about',(req,res) => {
 
 app.get('/help',(req,res) =>{
     res.render('help',{
-        message:'Drop your query at:- deepakjain263.dcsa@gmail.com',
+        message:'Drop your query at:- deepakjain263@gmail.com',
         title: 'Help',
         name: 'Deepak Jain'
     });

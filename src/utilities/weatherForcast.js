@@ -1,10 +1,10 @@
-const request = require('request');
- const func = (long,lat,callback) => {
-         let url = 'https://api.darksky.net/forecast/ffe5c9e0108aed22f2e9204474cddca5/';
-        if(long)
-                url = url+long;
-        if(lat)
-                url = url+','+lat;
+const request = require('postman-request');
+ const forecast = (long,lat,callback) => {
+         let url = 'http://api.weatherstack.com/current?access_key=0adc4debdfc940bb14c710648b6e1556';
+         if(long)
+         url = url+"&query="+long;
+        if(lat && long)
+         url = url+','+lat;
     //,-122.4233
    request({url,json:true},(error,{body} ={}) => {
            if(error)
@@ -13,10 +13,10 @@ const request = require('request');
                 callback(body.error);
            else
            callback(null,
-           'Its '+body.daily.data[0].summary+' It is currently '+body.currently.temperature +' degree Fahrenheit out there. Wind speed is '+body.currently.windSpeed+'kph and average visibility is '+body.currently.visibility+'+km. There is '+ body.currently.precipProbability+'% chances of rain.'
+           'Its '+body.current.weather_descriptions[0]+ ' and '+body.current.temperature +' degree Fahrenheit out there. cloud cover is '+body.current.cloudcover+'% and average visibility is '+body.current.visibility+'+km.'
            );
                    
    });
 }
 
-module.exports = func;
+module.exports = forecast;

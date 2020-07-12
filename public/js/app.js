@@ -6,8 +6,11 @@
 // })
 $('form').submit((e)=>{
     e.preventDefault();
-    if($('form').children('input').val() == '')
+    if($('form').children('input').val() == ''){
+        $('#location').empty();
+        $('#forcast').empty();
         alert('Invalid!');
+    }
     else
     {
         $('#location').text('Loading...');
